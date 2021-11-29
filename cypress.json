@@ -1,7 +1,7 @@
 {
+	"projectId": "zbnopk",
 	"baseUrl": "http://localhost:3000",
 	"env": {
-		"projectId": "zbnopk",
 		"__comment_TODO": "Update Strava credential for local",
 		"STRAVA_USERNAME": "",
 		"STRAVA_PW": "",
