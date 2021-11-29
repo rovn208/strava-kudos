@@ -3,6 +3,7 @@ name: Strava Kudos
 on:
   schedule:
     - cron: "0 * * * *"
+  workflow_dispatch:
 
 jobs:
   cypress-run:
@@ -17,7 +18,7 @@ jobs:
         with:
           headless: true
           record: true
-          install: false
+          build: yarn build
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           CYPRESS_STRAVA_USERNAME: ${{ secrets.CYPRESS_STRAVA_USERNAME }}
