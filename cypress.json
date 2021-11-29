@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "__comment_TODO": "Update Strava credential for local",
+    "STRAVA_USERNAME": "",
+    "STRAVA_PW": "",
+    "STRAVA_ATHLETE_ID": ""
+  }
+}
