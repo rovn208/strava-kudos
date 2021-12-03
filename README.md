@@ -1,4 +1,3 @@
-
 # strava-kudos
 
 [![Made in Vietnam][vn-logo]](https://webuild.community)

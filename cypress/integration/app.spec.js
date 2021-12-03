@@ -16,18 +16,22 @@ describe("Strava", () => {
 
 		// Kudos
 		cy.scrollTo("bottom", { duration: 1000 });
-		cy.get('[data-testid="unfilled_kudos"]').each(($el, index, $list) => {
-			cy.wrap($el)
-				.closest(".react-feed-component")
-				.within(() => {
-					cy.get('a[data-testid="owner-avatar"]')
-						.invoke("attr", "href")
-						.then((ownerId) => {
-							if (ownerId !== Cypress.env("STRAVA_ATHLETE_ID")) {
-								cy.get('[data-testid="unfilled_kudos"]').should("exist").click({ force: true });
-							}
-						});
-				});
-		});
+
+		const unfillKudoButtonSelector = '[data-testid="unfilled_kudos"]';
+		if (Cypress.$(unfillKudoButtonSelector).length > 0) {
+			cy.get(unfillKudoButtonSelector).each(($el, index, $list) => {
+				cy.wrap($el)
+					.closest(".react-feed-component")
+					.within(() => {
+						cy.get('a[data-testid="owner-avatar"]')
+							.invoke("attr", "href")
+							.then((ownerId) => {
+								if (ownerId !== Cypress.env("STRAVA_ATHLETE_ID")) {
+									cy.get(unfillKudoButtonSelector).should("exist").click({ force: true });
+								}
+							});
+					});
+			});
+		}
 	});
 });
