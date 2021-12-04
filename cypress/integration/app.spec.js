@@ -15,23 +15,23 @@ describe("Strava", () => {
 		cy.url().should("include", "/dashboard");
 
 		// Kudos
-		cy.scrollTo("bottom", { duration: 1000 });
-
-		const unfillKudoButtonSelector = '[data-testid="unfilled_kudos"]';
-		if (Cypress.$(unfillKudoButtonSelector).length > 0) {
-			cy.get(unfillKudoButtonSelector).each(($el, index, $list) => {
-				cy.wrap($el)
-					.closest(".react-feed-component")
-					.within(() => {
-						cy.get('a[data-testid="owner-avatar"]')
-							.invoke("attr", "href")
-							.then((ownerId) => {
+		cy.scrollTo("bottom", { duration: 1000 }).then(() => {
+			const unfillKudoButtonSelector = "[data-testid=unfilled_kudos]";
+			if (Cypress.$(unfillKudoButtonSelector).length > 0) {
+				cy.get(unfillKudoButtonSelector).each(($el, index, $list) => {
+					cy.wrap($el)
+						.closest(".react-feed-component")
+						.within(() => {
+							cy.get('a[data-testid="owners-name"]').then(($owner) => {
+								const ownerId = $owner.prop("href");
 								if (ownerId !== Cypress.env("STRAVA_ATHLETE_ID")) {
-									cy.get(unfillKudoButtonSelector).should("exist").click({ force: true });
+									cy.log(`Kudo to ${$owner.text()}'s activity'`);
+									cy.wrap($el).should("exist").click({ force: true });
 								}
 							});
-					});
-			});
-		}
+						});
+				});
+			}
+		});
 	});
 });
