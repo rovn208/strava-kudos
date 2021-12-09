@@ -17,11 +17,9 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           headless: true
-          record: true
           build: yarn build
         env:
           CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           CYPRESS_STRAVA_USERNAME: ${{ secrets.CYPRESS_STRAVA_USERNAME }}
           CYPRESS_STRAVA_PW: ${{ secrets.CYPRESS_STRAVA_PW }}
           CYPRESS_STRAVA_ATHLETE_ID: ${{ secrets.CYPRESS_STRAVA_ATHLETE_ID }}
