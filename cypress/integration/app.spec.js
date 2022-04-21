@@ -1,4 +1,3 @@
-/* eslint-disable */
 describe("Strava", () => {
 	it("Auto kudos", () => {
 		// Visit Strava
