@@ -1,6 +1,5 @@
 # strava-kudos
 
-[![Made in Vietnam][vn-logo]](https://webuild.community)
 [![Github Actions][github-actions-src]][github-actions-href]
 [![Forks][fork-href]][fork-href]
 
@@ -31,7 +30,7 @@ If you wanna schedule this execution, change the [cron value](./.github/workflow
 
 You can use [crontab guru](https://crontab.guru/) to help generate your cron syntax and confirm what time it will run. To help you get started, there is also a list of [crontab guru examples](https://crontab.guru/examples.html).
 
-### Step 4: Using Cypress dashboard for debugging/visualization results
+### Step 4: Using Cypress dashboard for debugging/visualization results (Optional)
 
 We are leveraging useful features of the Cypress Dashboard:
 
@@ -59,7 +58,7 @@ The following environment variables should be provided
 ```
 CYPRESS_BASE_URL  // Base URL of your application (1)
 CYPRESS_RECORD_KEY // Record key of current project (2)
-CYPRESS_STRAVA_ATHLETE_ID //
+CYPRESS_STRAVA_ATHLETE_ID // Strava's athlete id
 CYPRESS_STRAVA_PW // Strava's username
 CYPRESS_STRAVA_USERNAME // Strava's password
 ```
