@@ -58,7 +58,6 @@ The following environment variables should be provided
 ```
 CYPRESS_BASE_URL  // Base URL of your application (1)
 CYPRESS_RECORD_KEY // Record key of current project (2)
-CYPRESS_STRAVA_ATHLETE_ID // Strava's athlete id
 CYPRESS_STRAVA_PW // Strava's username
 CYPRESS_STRAVA_USERNAME // Strava's password
 ```
