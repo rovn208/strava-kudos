@@ -1,10 +1,9 @@
 describe("Strava", () => {
 	it("Auto kudos", () => {
 		// Visit Strava
-		cy.visit("https://www.strava.com/");
+		cy.visit("https://www.strava.com/login");
 
 		// Login
-		cy.get("a.btn-login").click();
 		cy.url().should("include", "/login");
 		cy.get("#email").should("exist").type(Cypress.env("STRAVA_USERNAME"));
 		cy.get("#password").should("exist").type(Cypress.env("STRAVA_PW"), { sensitive: true });
